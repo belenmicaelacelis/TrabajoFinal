@@ -6,16 +6,19 @@ Proyecto final realizado con HTML, CSS y JavaScript consumiendo la Fake Store AP
 
 # Descripción
 
-ClickShop es una tienda online básica que permite:
+ClickShop es una tienda online que permite visualizar productos obtenidos desde una API externa.
 
-- Ver productos obtenidos desde una API
-- Filtrar productos por categoría
-- Buscar productos por nombre
-- Ver detalles de cada producto
-- Agregar productos al carrito
-- Simular una compra
-- Guardar carrito usando localStorage
-- Cambiar entre modo claro y oscuro
+La aplicación cuenta con:
+
+- Catálogo dinámico de productos
+- Filtro por categorías
+- Buscador en tiempo real
+- Modal con detalle del producto
+- Carrito de compras
+- Persistencia de datos con localStorage
+- Modo oscuro
+- Loader de carga
+- Diseño responsive
 
 ---
 
@@ -25,67 +28,66 @@ ClickShop es una tienda online básica que permite:
 - CSS3
 - JavaScript
 - Fake Store API
+- localStorage
 
 ---
 
 # Funcionalidades
 
-## Productos
+## Productos dinámicos
 
-Se obtienen desde:
+Los productos se obtienen utilizando Fetch API desde:
 
 https://fakestoreapi.com/products
 
-Cada producto muestra:
+Cada producto contiene:
 
 - Imagen
-- Nombre
+- Título
 - Precio
 - Botón de detalle
 - Botón para agregar al carrito
 
 ---
 
-## Detalle de producto
+## Modal de detalle
 
-Al hacer click en "Ver":
+Al seleccionar un producto se abre un modal que muestra:
 
-- Se abre un modal
-- Se muestra:
-  - Imagen grande
-  - Descripción
-  - Categoría
-  - Precio
+- Imagen ampliada
+- Descripción
+- Categoría
+- Precio
 
 ---
 
 ## Filtro por categorías
 
-Las categorías se obtienen desde:
+Las categorías se cargan dinámicamente desde:
 
 https://fakestoreapi.com/products/categories
 
-Permite mostrar productos según la categoría seleccionada.
+Permite visualizar productos según la categoría elegida.
 
 ---
 
 ## Buscador
 
-Permite buscar productos por nombre en tiempo real.
+La aplicación incluye un buscador que permite filtrar productos en tiempo real mediante el nombre.
 
 ---
 
-## Carrito
+## Carrito de compras
 
 El carrito permite:
 
 - Agregar productos
-- Ver cantidad de productos
-- Ver total a pagar
+- Visualizar productos agregados
 - Eliminar productos
-- Simular compra
+- Calcular el total
+- Finalizar compra
 
-Los datos se guardan usando localStorage.
+La información se guarda utilizando localStorage.
 
 ---
 
@@ -96,13 +98,107 @@ La aplicación permite cambiar entre:
 - Modo claro
 - Modo oscuro
 
-La preferencia queda guardada en localStorage.
+La preferencia del usuario queda almacenada en localStorage.
 
 ---
 
 ## Loader
 
-Mientras cargan los productos se muestra un loader animado.
+Mientras los productos son cargados desde la API se muestra un loader animado.
+
+---
+
+# Organización del proyecto
+
+El proyecto se encuentra dividido en distintos archivos para mejorar la organización y separación de responsabilidades.
+
+---
+
+## index.html
+
+Página principal de la tienda.
+
+Contiene:
+
+- Header
+- Buscador
+- Filtros
+- Grid de productos
+- Modal
+- Loader
+
+---
+
+## carrito.html
+
+Página dedicada al carrito de compras.
+
+Permite:
+
+- Ver productos agregados
+- Eliminar productos
+- Ver total
+- Finalizar compra
+
+---
+
+## style.css
+
+Archivo encargado de todos los estilos visuales de la aplicación.
+
+Incluye:
+
+- Responsive Design
+- Dark Mode
+- Cards
+- Modal
+- Loader
+- Carrito
+
+---
+
+## dom.js
+
+Archivo encargado de la manipulación del DOM.
+
+Funciones principales:
+
+- Renderizar productos
+- Renderizar categorías
+- Abrir modal
+- Cerrar modal
+- Actualizar contador
+- Ocultar loader
+
+---
+
+## app.js
+
+Archivo principal de la lógica de la aplicación.
+
+Funciones principales:
+
+- Obtener productos desde la API
+- Obtener categorías
+- Filtrar productos
+- Buscar productos
+- Agregar al carrito
+- Manejar localStorage
+- Manejar dark mode
+
+---
+
+## carrito.js
+
+Archivo encargado de toda la lógica del carrito.
+
+Funciones principales:
+
+- Mostrar productos del carrito
+- Calcular total
+- Eliminar productos
+- Vaciar carrito
+- Finalizar compra
 
 ---
 
@@ -114,6 +210,7 @@ Mientras cargan los productos se muestra un loader animado.
 ├── index.html
 ├── carrito.html
 ├── style.css
+├── README.md
 
 ├── 📁 img
 │   └── logo.png
@@ -122,5 +219,3 @@ Mientras cargan los productos se muestra un loader animado.
 │   ├── app.js
 │   ├── dom.js
 │   └── carrito.js
-
-
