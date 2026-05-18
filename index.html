@@ -1,125 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ClickShop | Ecommerce</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- LOADER -->
-
-    <div id="loader">
-
-        <div class="spinner"></div>
-
-    </div>
+    <div id="loader"><div class="spinner"></div></div>
 
     <!-- HEADER -->
-
     <header>
+        <div class="logoContainer"><img src="img/logo.png" class="logo" alt="logo"></div>
 
-        <div class="logoContainer">
+        <div class="controles"><input type="text" id="buscador" placeholder="Buscar productos...">
 
-            <img src="img/logo.png" class="logo" alt="logo">
+            <select id="filtroCategorias"><option value="all">Todas las categorías</option></select>
 
-        </div>
+            <button id="btnTema"><i class="fa-solid fa-moon"></i></button>
 
-        <div class="controles">
-
-            <input
-                type="text"
-                id="buscador"
-                placeholder="Buscar productos..."
-            >
-
-            <select id="filtroCategorias">
-
-                <option value="all">
-                    Todas las categorías
-                </option>
-
-            </select>
-
-            <button id="btnTema">
-
-                <i class="fa-solid fa-moon"></i>
-
-            </button>
-
-            <a href="carrito.html" class="carrito">
-
-             <i class="fa-solid fa-cart-shopping"></i>
-
-             <span id="contadorCarrito"> 0 </span>
-
-            </a>
+            <a href="carrito.html" class="carrito"><i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito">0</span> </a>
 
         </div>
 
     </header>
 
     <!-- PRODUCTOS -->
-
-    <main>
-
-        <div
-            id="gridProductos"
-            class="gridProductos"
-        ></div>
-
-    </main>
+    <main><div id="gridProductos" class="gridProductos"></div></main>
 
     <!-- MODAL -->
-
     <div id="modal" class="modal">
 
         <div class="modalContenido">
 
-            <span id="cerrarModal">
-
-                &times;
-
-            </span>
+            <span id="cerrarModal">&times;</span>
 
             <img id="modalImagen">
-
             <div class="modalInfo">
-
                 <h2 id="modalTitulo"></h2>
-
                 <p id="modalDescripcion"></p>
-
                 <p id="modalCategoria"></p>
-
                 <p id="modalPrecio"></p>
-
             </div>
-
         </div>
 
     </div>
 
     <!-- SCRIPTS -->
-
     <script src="js/dom.js"></script>
-
     <script src="js/app.js"></script>
 
 </body>
-
 </html>
