@@ -6,6 +6,7 @@ let carrito = [];
 
 /* DARK MODE */
 const btnTema = document.getElementById("btnTema");
+const logo = document.querySelector(".logo");
 
 /* OBTENER PRODUCTOS */
 async function obtenerProductos() {
@@ -105,20 +106,18 @@ btnTema.addEventListener("click", () => {
     const temaActual = document.documentElement.getAttribute("data-tema");
 
     if (temaActual === "dark") {
-        document.documentElement.setAttribute("data-tema", "light");
 
-        localStorage.setItem(
-            "tema",
-            "light"
-        );
+        document.documentElement.setAttribute("data-tema", "light");
+        logo.src = "img/logo.png";
+
+        localStorage.setItem("tema", "light");
 
     } else {
-        document.documentElement.setAttribute("data-tema", "dark");
 
-        localStorage.setItem(
-            "tema",
-            "dark"
-        );
+        document.documentElement.setAttribute("data-tema", "dark");
+        logo.src = "img/logo2.png";
+
+        localStorage.setItem("tema", "dark");
     }
 });
 
@@ -128,6 +127,12 @@ function recuperarTema() {
 
     if (tema) {
         document.documentElement.setAttribute("data-tema", tema);
+
+        if (tema === "dark") {
+            logo.src = "img/logo2.png";
+        } else {
+            logo.src = "img/logo.png";
+        }
     }
 }
 
