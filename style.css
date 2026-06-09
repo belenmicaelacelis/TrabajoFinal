@@ -24,6 +24,8 @@ body {
     font-family: "Outfit", sans-serif;
     background: var(--fondo);
     color: var(--texto);
+    overflow-x: hidden;
+
 }
 
 /* HEADER */
